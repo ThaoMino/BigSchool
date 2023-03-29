@@ -1,14 +1,14 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: #d38c8c;
 }
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-
+    display: grid;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -16,7 +16,6 @@
 */
 .dl-horizontal dt {
     white-space: normal;
-
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -24,36 +23,58 @@ input,
 select,
 textarea {
     max-width: 280px;
-
-}
-.navbar-inverse{
-    background-color: #2c2525;
-    border-color: #2c2525;
 }
 
-.navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-    background-color: #972626;
-    border-color: #972626;
+    background-color: #777;
+    border-color: #fff
 }
-/*Course layout*/
+
+.navbar-inverse {
+    background-color: #f00;
+    border-color: #b6ff00;
+}
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: aqua;
+    }
+
+    .navbar-inverse .navbar-brand {
+        color: wheat;
+    }
+
 .course {
     list-style: none;
 }
-.course > li {
-    position: relative;
-    margin-bottom: 30px;
-}
-.course > li .date{
-    text-align: center;
-    background-color: #972626;
-    color:white;
-    width: 60px;
-    border-radius: 8px;
-}
-.course > li. details {
-    position:absolute;
-    top: 0;
-    left: 70px
-}
+
+    .course > li .details {
+        position: absolute;
+        top: 0;
+        left: 70px;
+        display: grid;
+    }
+
+    .course > li {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+        .course > li .date {
+            text-align: center;
+            background-color: #d41d50;
+            color: aliceblue;
+            width: 60px;
+            border-radius: 8px;
+        }
+
+
+        .course > li .action {
+            display: none;
+            left: 70px;
+            position: absolute;
+        }
+
+        .course > li:hover .action {
+            display: block;
+        }

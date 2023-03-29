@@ -182,9 +182,14 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\API\CoursesController.cs" />
+    <Compile Include="Controllers\AttendacesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
+    <Compile Include="Controllers\FollowingsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DTOs\AttendanceDto.cs" />
+    <Compile Include="DTOs\FollowingDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -204,14 +209,30 @@
     <Compile Include="Migrations\202303181322078_AddNameColumnToApplicationUser.designer.cs">
       <DependentUpon>202303181322078_AddNameColumnToApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303220629205_AddAttendance.cs" />
+    <Compile Include="Migrations\202303220629205_AddAttendance.designer.cs">
+      <DependentUpon>202303220629205_AddAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303250852397_AddFollowingsTable.cs" />
+    <Compile Include="Migrations\202303250852397_AddFollowingsTable.designer.cs">
+      <DependentUpon>202303250852397_AddFollowingsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303271005034_AddIsCanceledColumnToCourse.cs" />
+    <Compile Include="Migrations\202303271005034_AddIsCanceledColumnToCourse.designer.cs">
+      <DependentUpon>202303271005034_AddIsCanceledColumnToCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Following.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\CoursesViewModel.cs" />
     <Compile Include="ViewModel\CourseViewModel.cs" />
     <Compile Include="ViewModel\FutureDate.cs" />
     <Compile Include="ViewModel\ValidTime.cs" />
@@ -225,6 +246,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootbox.js" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -273,6 +296,8 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Courses\Create.cshtml" />
+    <Content Include="Views\Courses\Attending.cshtml" />
+    <Content Include="Views\Courses\Mine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -302,6 +327,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303181322078_AddNameColumnToApplicationUser.resx">
       <DependentUpon>202303181322078_AddNameColumnToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303220629205_AddAttendance.resx">
+      <DependentUpon>202303220629205_AddAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303250852397_AddFollowingsTable.resx">
+      <DependentUpon>202303250852397_AddFollowingsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303271005034_AddIsCanceledColumnToCourse.resx">
+      <DependentUpon>202303271005034_AddIsCanceledColumnToCourse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
